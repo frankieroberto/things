@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ref: MyString
+  name: MyText
+  title: MyText
+  maker: MyText
+  date_made: MyString
+  place_made: MyString
+  materials: MyText
+  measurements: MyString
+  description: MyText
+  whole_part: MyString
+  collection: MyString
+
+two:
+  ref: MyString
+  name: MyText
+  title: MyText
+  maker: MyText
+  date_made: MyString
+  place_made: MyString
+  materials: MyText
+  measurements: MyString
+  description: MyText
+  whole_part: MyString
+  collection: MyString
