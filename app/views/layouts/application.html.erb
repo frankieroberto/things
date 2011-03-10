@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Things</title>
+	<%= yield :head %>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
@@ -18,7 +18,7 @@
 	<%= yield %>
 	
 		<footer>
-			<p>These objects are all in the collections of the Science Museum, National Railway Museum and National Media Museum. The data is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution Non-Commercial Share-Alike licence</a>. The <a href="https://github.com/frankieroberto/things">Source code</a> for this web app is also available.</p>
+			<p>These objects are all in the collections of the Science Museum, National Railway Museum and National Media Museum. The data is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution Non-Commercial Share-Alike licence</a>. The <a href="https://github.com/frankieroberto/things">source code</a> for this web app is also available.</p>
 		</footer>
 	</div>
 </body>

@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <title><%= @type_of_thing.name %></title>
+<% end %>
+
 <%= content_tag("h1", @type_of_thing.name) %>
 
 <%= content_tag("h2") do %>
