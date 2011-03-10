@@ -28,6 +28,9 @@ namespace :things do
         thing.collection = row[10].to_s
 
         thing.save!
+        
+        print "."
+        $stdout.flush
 
       end
 

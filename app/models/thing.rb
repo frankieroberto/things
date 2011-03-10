@@ -1,6 +1,9 @@
 class Thing < ActiveRecord::Base
 
   validates_uniqueness_of :ref
+  belongs_to :type_of_thing
+  
+  scope :with_no_type, where(:type_of_thing_id => nil)
   
   
   case ActiveRecord::Base.connection.adapter_name
@@ -13,5 +16,24 @@ class Thing < ActiveRecord::Base
   end
   scope :random_order, order(random_order_sql)
   
+  
+  def self.random_with_no_type
+    
+    self.with_no_type.random_order.first
+    
+  end
+  
+  def type_of_thing_name=(name)
+        
+    self.type_of_thing = TypeOfThing.find_or_create_by_name(name)
+    self.save
+  end
+
+  def type_of_thing_name
+    
+    self.type_of_thing ? self.type_of_thing.name : nil
+    
+  end
+
 
 end

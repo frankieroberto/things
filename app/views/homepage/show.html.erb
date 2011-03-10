@@ -1,35 +1,54 @@
 <%= content_tag("h1", "What is This?") %>
 
-<%= content_tag("div") do %>
+<% if @thing %>
+	<%= content_tag("div") do %>
 	
-	<%= content_tag("header") do %>
-		<%= content_tag("h2", @thing.title) %>
-		<%= @thing.name %>
-	<% end %>
-	
-	<%= content_tag("p", @thing.description) %>
-
-	<% unless @thing.maker.blank? %>
-		<%= content_tag("p") do %>
-			<%= content_tag("span", "Made by: ") %>
-			<%= @thing.maker.gsub("(maker)", "") %>
+		<%= content_tag("header") do %>
+			<%= content_tag("h2", @thing.title) %>
+			<%= @thing.name %>
 		<% end %>
+	
+		<%= content_tag("p", @thing.description) %>
+
+		<% unless @thing.maker.blank? %>
+			<%= content_tag("p") do %>
+				<%= content_tag("span", "Made by: ") %>
+				<%= @thing.maker.gsub("(maker)", "") %>
+			<% end %>
+		<% end %>
+
+		<% unless @thing.date_made.blank? %>
+			<%= content_tag("p") do %>
+				<%= content_tag("span", "Date: ") %>
+				<%= @thing.date_made %>
+			<% end %>
+		<% end %>
+
+		<% unless @thing.place_made.blank? %>
+			<%= content_tag("p") do %>
+				<%= content_tag("span", "Place: ") %>
+				<%= @thing.place_made %>
+			<% end %>
+		<% end %>
+	
+		<%= @thing.collection %>
+	
 	<% end %>
 
-	<% unless @thing.date_made.blank? %>
-		<%= content_tag("p") do %>
-			<%= content_tag("span", "Date: ") %>
-			<%= @thing.date_made %>
-		<% end %>
+	<%= form_for @thing do |f| %>
+		<%= f.label :type_of_thing_name, "What is this?" %>
+		it's a 
+		<%= f.text_field :type_of_thing_name %>
+		<%= content_tag("span", "(eg 'clock')", :class => :example) %>
+	
+		<%= f.submit "Go" %>
 	<% end %>
 
-	<% unless @thing.place_made.blank? %>
-		<%= content_tag("p") do %>
-			<%= content_tag("span", "Place: ") %>
-			<%= @thing.place_made %>
-		<% end %>
-	<% end %>
-	
-	<%= @thing.collection %>
-	
+	<%= form_for @thing do |f| %>
+		<%= f.submit "No idea"%>
+	<% end %>	
+
+<% else %>
+	<%=content_tag("p", "No things!")%>
+
 <% end %>

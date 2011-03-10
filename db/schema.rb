@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110310172554) do
+ActiveRecord::Schema.define(:version => 20110310201353) do
 
   create_table "things", :force => true do |t|
     t.string   "ref"
@@ -27,13 +27,18 @@ ActiveRecord::Schema.define(:version => 20110310172554) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "type_of_thing_id"
+    t.integer  "no_idea_count"
   end
 
-  create_table "type_of_things", :force => true do |t|
+  add_index "things", ["ref"], :name => "index_things_on_ref", :unique => true
+
+  create_table "types_of_thing", :force => true do |t|
     t.string   "name"
     t.integer  "things_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "types_of_thing", ["name"], :name => "index_types_of_thing_on_name", :unique => true
 
 end
