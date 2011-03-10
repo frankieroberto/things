@@ -12,11 +12,12 @@
 		<header>
 			<div class="logo"><%= link_to "Things", root_path %></div>
 			<%= content_tag("p", :class => :intro) do %>
-				<%= pluralize(@things_identified_count, "thing") %> have been identified<%= (", including ".html_safe + type_of_things_links(@thing_types)) unless @thing_types.nil? %>.
+				<%= pluralize(@things_identified_count, "thing") %> have been identified<%= (", including ".html_safe + type_of_things_links(@thing_types)) unless @thing_types.size == 0 %>.
 			<% end %>
 		</header>
-	<%= yield %>
-	
+		<section>
+			<%= yield %>
+		</section>
 		<footer>
 			<p>These objects are all in the collections of the Science Museum, National Railway Museum and National Media Museum. The data is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution Non-Commercial Share-Alike licence</a>. The <a href="https://github.com/frankieroberto/things">source code</a> for this web app is also available.</p>
 		</footer>

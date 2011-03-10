@@ -6,6 +6,7 @@ body {font-size: 18px; padding: 20px 40px;}
 h1 {text-align: center;}
 header * {display: inline;}
 
+section header * {display: block;}
 
 form.thing_type, form.thing_type input {font-size: 30px;}
 

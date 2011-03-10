@@ -10,17 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110310201353) do
+ActiveRecord::Schema.define(:version => 20110310233707) do
 
   create_table "things", :force => true do |t|
-    t.string   "ref"
+    t.text     "ref",              :limit => 255
     t.text     "name"
     t.text     "title"
     t.text     "maker"
-    t.string   "date_made"
-    t.string   "place_made"
+    t.text     "date_made",        :limit => 255
+    t.text     "place_made",       :limit => 255
     t.text     "materials"
-    t.string   "measurements"
+    t.text     "measurements",     :limit => 255
     t.text     "description"
     t.string   "whole_part"
     t.string   "collection"
