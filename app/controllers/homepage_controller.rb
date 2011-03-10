@@ -1,6 +1,6 @@
 class HomepageController < ApplicationController
 
-  def show
+  def show    
     @thing = Thing.random_with_no_type        
   end
   

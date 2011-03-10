@@ -1,5 +1,7 @@
 <%= content_tag("h1", "What is This?") %>
 
+<%= content_tag("p", flash[:message]) if flash[:message] %>
+
 <% if @thing %>
 	<%= content_tag("div") do %>
 	
