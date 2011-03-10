@@ -1,0 +1,23 @@
+body, input {font-family: 'Goudy Bookletter 1911', 'Baskerville', 'Times New Roman', serif; }
+body {font-size: 18px; padding: 20px 40px;}
+.page {max-width: 900px; margin: 0 auto;}
+.logo {  font-size: 80px; margin-right: 20px;}
+.logo a {text-decoration: none; color: black;}
+h1 {text-align: center;}
+header * {display: inline;}
+
+
+form.thing_type, form.thing_type input {font-size: 30px;}
+
+form.thing_type label {float: left;}
+
+form.thing_type .input {width: 210px; margin: 0 0 0 20px; float: left;}
+form.thing_type #thing_type_of_thing_name {height: 40px; width: 200px; padding: 0 5px; margin-bottom: 0; border: 1px solid black;}
+form.thing_type .example {font-size: 14px; display: block; margin-top: 5px; }
+
+
+form.thing_type #thing_submit {float: left; margin-left: 20px; height: 42px; font-size: 30px; border: 1px solid black; padding: 0 15px; border-radius: 10px;}
+
+form.no_idea {text-align: right;}
+form.no_idea * {display: inline;}
+form.no_idea #thing_submit {height: 42px; font-size: 30px; border: 1px solid black; padding: 0 15px; border-radius: 10px; }

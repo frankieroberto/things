@@ -1,12 +1,9 @@
-<%= content_tag("h1", "What is This?") %>
-
-<%= content_tag("p", :class => :intro) do %>
-	<%= pluralize(@things_identified_count, "thing") %> have been identified<%= (", including ".html_safe + type_of_things_links(@thing_types)) unless @thing_types.nil? %>.
-<% end %>
 
 <%= content_tag("p", flash[:message]) if flash[:message] %>
 
 <% if @thing %>
+
+	<%= content_tag("h1", "What is this?")%>
 	<%= content_tag("div") do %>
 	
 		<%= content_tag("header") do %>
@@ -41,20 +38,25 @@
 		<% end %>
 		
 	<% end %>
-
-	<%= form_for @thing do |f| %>
-		<%= f.label :type_of_thing_name, "What is this?" %>
-		it's a 
-		<%= f.text_field :type_of_thing_name %>
-		<%= content_tag("span", "(eg 'clock')", :class => :example) %>
 	
-		<%= f.submit "Go" %>
+	<div class="question">
+	<%= form_for @thing, :html => {:class => :thing_type} do |f| %>
+		
+		<%= f.label :type_of_thing_name, "It's a" %>
+		
+		<div class="input">
+			<%= f.text_field :type_of_thing_name %>
+			<%= content_tag("span", "(eg 'clock')", :class => :example) %>
+		</div>
+	
+		<%= f.submit "I reckon" %>
 	<% end %>
 
-	<%= form_for @thing do |f| %>
+	<%= form_for @thing, :html => {:class => :no_idea} do |f| %>
 		<%= f.submit "No idea"%>
 	<% end %>	
 
+	</div>
 <% else %>
 	<%=content_tag("p", "No things!")%>
 

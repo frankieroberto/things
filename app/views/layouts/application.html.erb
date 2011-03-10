@@ -5,10 +5,17 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+	<link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<div class="logo"><%= link_to "Things", root_path %></div>
-<%= yield %>
-
+	<div class="page">
+		<header>
+			<div class="logo"><%= link_to "Things", root_path %></div>
+			<%= content_tag("p", :class => :intro) do %>
+				<%= pluralize(@things_identified_count, "thing") %> have been identified<%= (", including ".html_safe + type_of_things_links(@thing_types)) unless @thing_types.nil? %>.
+			<% end %>
+		</header>
+	<%= yield %>
+	</div>
 </body>
 </html>
