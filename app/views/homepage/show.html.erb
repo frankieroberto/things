@@ -1,13 +1,20 @@
 <%= content_tag("h1", "What is This?") %>
 
+<%= content_tag("p", :class => :intro) do %>
+	<%= pluralize(@things_identified_count, "thing") %> have been identified<%= (", including ".html_safe + type_of_things_links(@thing_types)) unless @thing_types.nil? %>.
+<% end %>
+
 <%= content_tag("p", flash[:message]) if flash[:message] %>
 
 <% if @thing %>
 	<%= content_tag("div") do %>
 	
 		<%= content_tag("header") do %>
-			<%= content_tag("h2", @thing.title) %>
-			<%= @thing.name %>
+			<%= content_tag("h2") do %>
+				<%= @thing.title %>
+				<%= @thing.name if @thing.title.blank? %>
+			<% end %>
+			<%= @thing.name unless @thing.title.blank? %>
 		<% end %>
 	
 		<%= content_tag("p", @thing.description) %>

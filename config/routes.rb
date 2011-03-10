@@ -1,5 +1,7 @@
 Whatisthis::Application.routes.draw do
-  resources :type_of_things
+
+
+  resources :types, :controller => :types_of_thing
 
   resources :things
 

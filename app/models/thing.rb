@@ -1,7 +1,7 @@
 class Thing < ActiveRecord::Base
 
   validates_uniqueness_of :ref
-  belongs_to :type_of_thing
+  belongs_to :type_of_thing, :counter_cache => true
   
   scope :with_no_type, where(:type_of_thing_id => nil)
   
@@ -17,10 +17,12 @@ class Thing < ActiveRecord::Base
   scope :random_order, order(random_order_sql)
   
   
-  def self.random_with_no_type
-    
-    self.with_no_type.random_order.first
-    
+  def self.untyped_things_count
+    self.with_no_type.count
+  end
+  
+  def self.random_with_no_type    
+    self.with_no_type.random_order.first    
   end
   
   def type_of_thing_name=(name)

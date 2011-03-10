@@ -1,0 +1,11 @@
+<%= content_tag("h1", @type_of_thing.name) %>
+
+<%= content_tag("h2") do %>
+	<%= pluralize(@type_of_thing.things.size, "thing") %>
+<% end %>
+
+<ul>
+	<% @type_of_thing.things.find_each do |thing| %>	
+		<li><%= link_to thing.name, thing %></li>
+	<% end %>
+</ul>
