@@ -21,3 +21,5 @@ form.thing_type #thing_submit {float: left; margin-left: 20px; height: 42px; fon
 form.no_idea {text-align: right;}
 form.no_idea * {display: inline;}
 form.no_idea #thing_submit {height: 42px; font-size: 30px; border: 1px solid black; padding: 0 15px; border-radius: 10px; }
+
+footer {clear: both; margin-top: 150px; font-size: 14px;}
