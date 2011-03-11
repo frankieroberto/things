@@ -3,3 +3,26 @@
 <% end %>
 
 <h1><%= name_or_title(@thing) %></h1>
+
+<%= content_tag("p", @thing.description) %>
+
+<% unless @thing.maker.blank? %>
+	<%= content_tag("p") do %>
+		<%= content_tag("span", "Made by: ") %>
+		<%= @thing.maker.gsub("(maker)", "") %>
+	<% end %>
+<% end %>
+
+<% unless @thing.date_made.blank? %>
+	<%= content_tag("p") do %>
+		<%= content_tag("span", "Date: ") %>
+		<%= @thing.date_made %>
+	<% end %>
+<% end %>
+
+<% unless @thing.place_made.blank? %>
+	<%= content_tag("p") do %>
+		<%= content_tag("span", "Place: ") %>
+		<%= @thing.place_made %>
+	<% end %>
+<% end %>
