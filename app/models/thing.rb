@@ -5,6 +5,7 @@ class Thing < ActiveRecord::Base
   
   scope :with_no_type, where(:type_of_thing_id => nil)
   
+  scope :whole_part, where(:whole_part => "WHOLE")
   
   case ActiveRecord::Base.connection.adapter_name
   when 'PostgreSQL'
@@ -22,7 +23,7 @@ class Thing < ActiveRecord::Base
   end
   
   def self.random_with_no_type    
-    self.with_no_type.random_order.first    
+    self.with_no_type.whole_part.random_order.first    
   end
   
   def type_of_thing_name=(name)
