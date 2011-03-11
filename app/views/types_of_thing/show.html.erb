@@ -10,6 +10,6 @@
 
 <ul>
 	<% @type_of_thing.things.find_each do |thing| %>	
-		<li><%= link_to thing.name, thing %></li>
+		<li><%= link_to name_or_title(thing), thing %></li>
 	<% end %>
 </ul>

@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <title><%= @thing.name%></title>
+  <title><%= name_or_title(@thing) %></title>
 <% end %>
 
-<h1><%= @thing.name %></h1>
+<h1><%= name_or_title(@thing) %></h1>
