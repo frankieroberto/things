@@ -24,3 +24,12 @@ form.no_idea * {display: inline;}
 form.no_idea #thing_submit {height: 42px; font-size: 30px; border: 1px solid black; padding: 0 15px; border-radius: 10px; }
 
 footer p {clear: both; padding-top: 150px; font-size: 14px;}
+
+ul.types {
+    	-moz-column-count: 4;
+    	-moz-column-gap: 20px;
+    	-webkit-column-count: 4;
+    	-webkit-column-gap: 20px;
+    	column-count: 4;
+    	column-gap: 20px;
+    }

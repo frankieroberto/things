@@ -5,7 +5,7 @@
 <%= content_tag("h1", "Things by Type") %>
 
 
-<ul>
+<ul class="types">
 	<% @types_of_thing.each do |type_of_thing|%>
 		<li><%= link_to(pluralize(type_of_thing.things.size, type_of_thing.name), type_path(type_of_thing)) %></li>
 	<% end %>
