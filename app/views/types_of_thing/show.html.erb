@@ -1,12 +1,8 @@
 <% content_for :head do %>
-  <title><%= @type_of_thing.name %></title>
+  <title><%= @type_of_thing.name.pluralize.titleize %></title>
 <% end %>
 
-<%= content_tag("h1", @type_of_thing.name) %>
-
-<%= content_tag("h2") do %>
-	<%= pluralize(@type_of_thing.things.size, "thing") %>
-<% end %>
+<%= content_tag("h1", pluralize(@type_of_thing.things.size, @type_of_thing.name).titleize) %>
 
 <ul>
 	<% @type_of_thing.things.find_each do |thing| %>	
