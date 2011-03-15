@@ -33,3 +33,5 @@ ul.types {
     	column-count: 4;
     	column-gap: 20px;
     }
+
+p.classification {text-align: center; margin-top: 2em;}

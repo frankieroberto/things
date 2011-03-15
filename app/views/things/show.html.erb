@@ -26,3 +26,9 @@
 		<%= @thing.place_made %>
 	<% end %>
 <% end %>
+
+<% if @thing.type_of_thing %>
+	<%= content_tag("p", :class => :classification) do %>
+		Classified as <%= a_or_an(@thing.type_of_thing.name, false)%> <%= link_to(@thing.type_of_thing.name, type_path(@thing.type_of_thing), :rel => :tag) %> <%= time_ago_in_words(@thing.updated_at) %> ago.
+	<% end %>
+<% end %>
