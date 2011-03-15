@@ -2,4 +2,5 @@
 
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'type_of_thing', 'types_of_thing'
+  inflect.irregular 'piece of skin', 'pieces of skin'
 end
