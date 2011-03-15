@@ -48,7 +48,7 @@
 		<%= f.label :type_of_thing_name, "It's a" %>
 		
 		<div class="input">
-			<%= f.text_field :type_of_thing_name %>
+			<%= f.text_field :type_of_thing_name, :autocapitalize => :off, :autocomplete => :off %>
 			<%= content_tag("span", "(eg 'clock')", :class => :example) %>
 		</div>
 	
