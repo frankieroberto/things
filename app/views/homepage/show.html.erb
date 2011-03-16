@@ -2,7 +2,7 @@
   <title>Things</title>
 <% end %>
 
-<%= content_tag("p", flash[:message]) if flash[:message] %>
+<%= content_tag("p", flash[:message], :class => :message) if flash[:message] %>
 
 <% if @thing %>
 

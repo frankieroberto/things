@@ -23,6 +23,8 @@ form.no_idea {text-align: right;}
 form.no_idea * {display: inline;}
 form.no_idea #thing_submit {height: 42px; font-size: 30px; border: 1px solid black; padding: 0 15px; border-radius: 10px; }
 
+form input[type=submit]:hover {background-color: #888; cursor: pointer;}
+
 footer p {clear: both; padding-top: 150px; font-size: 14px;}
 
 ul.types {
@@ -35,3 +37,5 @@ ul.types {
     }
 
 p.classification {text-align: center; margin-top: 2em;}
+
+p.message {text-align: center; background-color: #DDD; font-size: .9em;}
