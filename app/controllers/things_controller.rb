@@ -11,7 +11,7 @@ class ThingsController < ApplicationController
       
     else
 
-      thing_type_name = params[:thing][:type_of_thing_name].downcase
+      thing_type_name = params[:thing][:type_of_thing_name].downcase.gsub(".","")
 
       @thing.type_of_thing_name = thing_type_name
       @thing.reload

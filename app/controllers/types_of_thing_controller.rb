@@ -5,7 +5,12 @@ class TypesOfThingController < ApplicationController
   end
 
   def show
-    @type_of_thing = TypeOfThing.find(params[:id])
+    begin
+      @type_of_thing = TypeOfThing.find_by_name!(params[:id])
+    rescue
+      @type_of_thing = TypeOfThing.find(params[:id])
+      redirect_to(type_path(@type_of_thing.name), :status => :moved_permanently) and return
+    end
   end
 
 end
